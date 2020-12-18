@@ -18,7 +18,7 @@ https://adventofcode.com 2020
 | 11             | :heavy_check_mark:   | :heavy_check_mark:   |
 | 12             | :heavy_check_mark:   | :heavy_check_mark:   |
 | 13             | :heavy_check_mark:   | :x:                  |
-| 14             |                      |                      |
+| 14             | :heavy_check_mark:   | :heavy_check_mark:   |
 | 15             |                      |                      |
 | 16             |                      |                      |
 | 17             |                      |                      |
