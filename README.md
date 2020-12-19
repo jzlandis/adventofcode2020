@@ -10,8 +10,8 @@ https://adventofcode.com 2020
 
 ## Python Solutions
 
-| Date           | Part 1 Completion    | Part 1 Time (sec)    | Part 2 Completion    | Part 2 Time (sec)    |
-| :------------- | :------------------: | :------------------: | :------------------: | :------------------: |
+| Date                                      | Part 1 Completion    | Part 1 Time (sec)    | Part 2 Completion    | Part 2 Time (sec)    |
+| :---------------------------------------: | :------------------: | :------------------: | :------------------: | :------------------: |
 | [01](./python_solns/day01.py)             | :heavy_check_mark:   | 2.9e-03              | :heavy_check_mark:   | 6.4e-02              |
 | [02](./python_solns/day02.py)             | :heavy_check_mark:   | 2.3e-03              | :heavy_check_mark:   | 2.5e-03              |
 | [03](./python_solns/day03.py)             | :heavy_check_mark:   | 9.8e-04              | :heavy_check_mark:   | 4.1e-03              |
@@ -29,7 +29,7 @@ https://adventofcode.com 2020
 | [15](./python_solns/day15.py)             | :heavy_check_mark:   | 8.9e-04              | :heavy_check_mark:   | 1.7e+01              |
 | [16](./python_solns/day16.py)             | :heavy_check_mark:   | 4.3e-03              | :x:                  |                      |
 | [17](./python_solns/day17.py)             | :x:                  |                      | :x:                  |                      |
-| [18](./python_solns/day18.py)             | :x:                  |                      | :x:                  |                      |
+| [18](./python_solns/day18.py)             | :heavy_check_mark:   | 1.3e-02              | :x:                  |                      |
 | [19](./python_solns/day19.py)             |                      |                      |                      |                      |
 | [20](./python_solns/day20.py)             |                      |                      |                      |                      |
 | [21](./python_solns/day21.py)             |                      |                      |                      |                      |
