@@ -18,7 +18,7 @@ def main(f, part):
         i += 1
     p1num = nums[i]
     if part == 'part1':
-        print(p1num)
+        return p1num
     elif part == 'part2':
         i0, i1 = 0, 2
         while True:
@@ -33,11 +33,11 @@ def main(f, part):
                     i1 += 1
                 else:
                     i0 += 1
-        print(min(contig_range) + max(contig_range))
+        return min(contig_range) + max(contig_range)
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day09.py <part1|part2> <input_file>\n')

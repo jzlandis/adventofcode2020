@@ -1,6 +1,5 @@
 import sys
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 lrots = {0: lambda x: x, 90: lambda x: np.array([-x[1], x[0]]),
@@ -59,7 +58,7 @@ def main(f, part):
                 pos += action2add[action]*val
             positions.append(np.array(pos))
     elif part == 'part2':
-        waypoint = waypoint2(10, 1, debug=True)
+        waypoint = waypoint2(10, 1)
         pos = np.array([0, 0])
         positions = []
         waypoints = []
@@ -74,19 +73,11 @@ def main(f, part):
                 waypoint.trans(action, val)
             positions.append(np.array(pos))
             waypoints.append(np.array(waypoint.loc) + pos)
-        plt.plot([x[0] for x in waypoints], [x[1] for x in waypoints], '.-', label='waypoint')
-    print(pos)
-    print(abs(pos[0]) + abs(pos[1]))
-    plt.plot([x[0] for x in positions], [x[1] for x in positions], label='position')
-    plt.plot([positions[0][0], positions[-1][0]], [positions[0][1], positions[-1][1]], label='net_path')
-    plt.legend(loc='best')
-    plt.grid()
-    plt.show()
-            
+    return abs(pos[0]) + abs(pos[1])
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day12.py <part1|part2> <input_file>\n')

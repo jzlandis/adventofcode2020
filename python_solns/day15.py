@@ -19,11 +19,11 @@ def main(f, part):
             prev = t - i - 1
         spoken.append(prev)
         t += 1
-    print(prev)
+    return prev
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day15.py <part1|part2> <input_file>\n')

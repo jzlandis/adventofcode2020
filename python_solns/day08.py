@@ -42,11 +42,11 @@ def main(f, part):
                 if smooth_exit:
                     break
                 instr[i][0] = action
-    print(acc)
+    return acc
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day08.py <part1|part2> <input_file>\n')

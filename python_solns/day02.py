@@ -1,4 +1,5 @@
 import sys
+from operator import xor
 
 
 def parse_line(line):
@@ -9,24 +10,31 @@ def parse_line(line):
     return cl, ch, l, pw
 
 
-def check_pw(cl, ch, l, pw):
+def check_pw1(cl, ch, l, pw):
     c = pw.count(l)
     return cl <= c <= ch
 
 
-def main(f):
+def check_pw2(cl, ch, l, pw):
+    return xor(pw[cl-1] == l, pw[ch-1] == l)
+
+
+def main(f, part):
     passes, fails = 0, 0
+    if part == 'part1':
+        check = check_pw1
+    elif part == 'part2':
+        check = check_pw2
     for line in open(f):
-        cl, ch, l, pw = parse_line(line)
-        if check_pw(*parse_line(line)):
+        if check(*parse_line(line)):
             passes += 1
         else:
             fails += 1
-    sys.stdout.write(f'PASSES: {passes:d}; FAILS: {fails:d}\n')
+    return passes
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        main(sys.argv[1])
+    if len(sys.argv) == 3:
+        print(main(sys.argv[2], sys.argv[1]))
     else:
-        sys.stderr.write('USAGE: python day02.py <input_list>\n')
+        sys.stderr.write('USAGE: python day02.py <part1|part2> <input_file>\n')

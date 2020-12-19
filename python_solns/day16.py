@@ -63,7 +63,7 @@ def main(f, part):
             for x in t:
                 if not x in overall_valid:
                     invalid += x
-        print(invalid)
+        return invalid
     elif part == 'part2':
         nearby_tickets = [t for t in nearby_tickets if all(x in overall_valid for x in t)]
         field_labels = work_out_fields(field_allowables, nearby_tickets)
@@ -71,11 +71,11 @@ def main(f, part):
         for i, label in enumerate(field_labels):
             if label.startswith('departure'):
                 prod *= my_ticket[i]
-        print(prod)
+        return prod
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day16.py <part1|part2> <input_file>\n')

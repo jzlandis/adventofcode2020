@@ -26,13 +26,19 @@ def count_trees(right, down, tmap):
     return hits
 
 
-def main(f, right, down):
-    treecount = count_trees(right, down, read_map(f))
-    sys.stdout.write(f'TREES HIT: {treecount:d}\n')
+def main(f, part):
+    m = read_map(f)
+    if part == 'part1':
+        return count_trees(3, 1, m)
+    elif part == 'part2':
+        p = 1
+        for right, down in ((1, 1), (3, 1), (5, 1), (7, 1), (1, 2)):
+            p *= count_trees(right, down, m)
+        return p
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 3:
-        main(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
+    if len(sys.argv) == 3:
+        print(main(sys.argv[2], sys.argv[1]))
     else:
-        sys.stderr.write('USAGE: python day03.py <input_file> <right> <down>\n')
+        sys.stderr.write('USAGE: python day03.py <part1|part2> <input_file>\n')

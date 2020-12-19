@@ -9,16 +9,22 @@ def get_nums(c, f):
             return cnums
 
 
-def main(c, f):
+def main(f, part):
+    if part == 'part1':
+        c = 2
+    elif part == 'part2':
+        c = 3
+    else:
+        exit(-1)
     nums = get_nums(c, f)
     p = 1
     for n in nums:
         p *= n
-    sys.stdout.write(f'{" ".join("%d" % n for n in nums):s} {p}\n')
+    return p
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 2:
-        main(int(sys.argv[1]), sys.argv[2])
+    if len(sys.argv) == 3:
+        print(main(sys.argv[2], sys.argv[1]))
     else:
-        sys.stderr.write('USAGE: python day01.py <count_to_sum> <number_list>\n')
+        sys.stderr.write('USAGE: python day01.py <part1|part2> <input_file>\n')

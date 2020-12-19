@@ -51,16 +51,15 @@ def main(f, part):
     if part == 'part1':
         for i, b in parse_input1(f):
             mem[i] = apply_mask1(b)
-        print(sum(mem.values()))
     elif part == 'part2':
         for i, b in parse_input2(f):
             for m in apply_mask2(i):
                 mem[m] = b
-        print(sum(mem.values()))
+    return sum(mem.values())
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day14.py <part1|part2> <input_file>\n')

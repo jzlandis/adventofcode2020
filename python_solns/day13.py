@@ -24,7 +24,7 @@ def main(f, part):
             wait_times.append(m - etime)
         min_wait_time = min(wait_times)
         rel_bus = buses[wait_times.index(min_wait_time)]
-        print(min_wait_time, rel_bus, min_wait_time*rel_bus)
+        return min_wait_time*rel_bus
     elif part == 'part2':
         s = buses[0]
         mults = []
@@ -54,6 +54,6 @@ def main(f, part):
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day13.py <part1|part2> <input_file>\n')

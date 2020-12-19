@@ -95,16 +95,16 @@ def pp_gen(f, check_values=False):
         yield pp
 
 
-def main(part, f):
+def main(f, part):
     valid = 0
     for pp in pp_gen(f, check_values=(part=='part2')):
         if len(headers.difference(pp)) == 0:
             valid += 1
-    print(valid)
+    return valid
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 2 and sys.argv[1] in ('part1', 'part2'):
-        main(sys.argv[1], sys.argv[2])
+    if len(sys.argv) == 3:
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day04.py <part1|part2> <input_file>\n')

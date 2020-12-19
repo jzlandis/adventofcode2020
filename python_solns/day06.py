@@ -40,11 +40,11 @@ def main(f, part):
     if part == 'part2':
         groups2sets = groups2sets2
     group_answers = list(groups2sets(group_generator(f)))
-    print(sum(len(g) for g in group_answers))
+    return sum(len(g) for g in group_answers)
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day06.py <part1|part2> <input_file>\n')

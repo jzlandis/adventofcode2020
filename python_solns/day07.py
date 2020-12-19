@@ -38,13 +38,13 @@ def main(f, part):
             bag_count, sub_bags = get_sub_bags(bag_dict, k)
             if 'shiny_gold' in sub_bags:
                 c += 1
-        print(c)
+        return c
     elif part == 'part2':
         bag_count, sub_bags = get_sub_bags(bag_dict, 'shiny_gold', multi=True)
-        print(bag_count)
+        return bag_count
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day07.py <part1|part2> <input_file>\n')

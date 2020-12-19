@@ -29,16 +29,16 @@ def main(f, part):
         ID = row*8 + column
         outcomes.append((line.strip(), row, column, ID))
     if part == 'part1':
-        print(max(outcomes, key=lambda x: x[3]))
+        return max(outcomes, key=lambda x: x[3])[-1]
     if part == 'part2':
         IDs = sorted(x[-1] for x in outcomes)
         for i in range(IDs[0], IDs[-1]+1):
             if not i in IDs and i-1 in IDs and i+1 in IDs:
-                print(i)
+                return i
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        main(sys.argv[2], sys.argv[1])
+        print(main(sys.argv[2], sys.argv[1]))
     else:
         sys.stderr.write('USAGE: python day05.py <part1|part2> <input_file>\n')
