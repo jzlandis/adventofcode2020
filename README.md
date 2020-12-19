@@ -3,7 +3,9 @@ https://adventofcode.com 2020
 
 ### Solution Table Legend:
 :heavy_check_mark: --> solved without spoilers
+
 :x: --> unsolved
+
 :pray: --> solution relied on spoiler
 
 ## Python Solutions
